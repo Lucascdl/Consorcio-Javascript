@@ -1,34 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Final</title>
+    <title>Simulador de Consórcio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #2193b0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #6dd5ed;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <script>
-        const valorBem = parseFloat(prompt("Informe um valor:"));
-        const taxaAdministrativa = parseFloat(prompt("Informe a taxa administrativa (em %):"));
-        const numeroParcelas = parseInt(prompt("Informe o número de parcelas:"));
+    <div class="container">
+        <h1>Bem-vindo ao Simulador de Consórcio</h1>
+        <p>Simule o valor das parcelas e veja o quanto você vai pagar com nosso simulador de consórcio.</p>
+        <div class="btn-container">
+            <a href="file:///C:/Users/DELL/Documents/Dev.%20Full%20Stack/Javascript/Projetos/Consorcio2/consorcios.html"
+                class="btn">Acessar o Simulador</a>
+        </div>
+    </div>
 
-        const valorTaxa = (valorBem * taxaAdministrativa) / 100;
-        const valorTotal = valorBem + valorTaxa;
-        const valorParcela = valorTotal / numeroParcelas;
-
-        console.log("Valor: R$" + valorBem.toFixed(2));
-        console.log("Taxa Administrativa: R$" + valorTaxa.toFixed(2));
-        console.log("Valor Total a Pagar: R$" + valorTotal.toFixed(2));
-        console.log("Número de Parcelas: " + numeroParcelas);
-        console.log("Valor de Cada Parcela: R$" + valorParcela.toFixed(2));
-
-        alert(
-            "Simulação de Consórcio:\n\n" +
-            "Valor: R$" + valorBem.toFixed(2) + "\n" +
-            "Taxa Administrativa: R$" + valorTaxa.toFixed(2) + "\n" +
-            "Valor Total a Pagar: R$" + valorTotal.toFixed(2) + "\n" +
-            "Número de Parcelas: " + numeroParcelas + "\n" +
-            "Valor de Cada Parcela: R$" + valorParcela.toFixed(2)
-        );
-    </script>
 </body>
+
 </html>
