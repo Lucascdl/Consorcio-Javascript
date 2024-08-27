@@ -37,6 +37,21 @@ p {
     margin-bottom: 30px;
 }
 
+.logo {
+
+    margin-top: -80px;
+}
+
+.attract {
+    font-size: 5rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    color: #2193b0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: -70px;
+
+}
+
 .btn-container {
     display: flex;
     justify-content: center;
