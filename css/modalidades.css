@@ -37,14 +37,14 @@ p {
     margin-bottom: 30px;
 }
 
-.consorcio-container {
+.modalidade-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
-.consorcio-item {
+.modalidade-item {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
@@ -54,7 +54,7 @@ p {
     justify-content: space-between;
 }
 
-.consorcio-item h3 {
+.modalidade-item h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
