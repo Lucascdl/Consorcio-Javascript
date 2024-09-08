@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -16,6 +17,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    margin-bottom: 20px; /* Adiciona espaço entre o container e a div cadastre-se */
 }
 
 h2 {
@@ -55,4 +57,12 @@ button:hover {
 .result {
     margin-top: 20px;
     text-align: center;
+}
+
+.cadastre-se {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2%;
+    text-decoration:underline;
 }

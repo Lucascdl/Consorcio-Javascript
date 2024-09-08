@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dados Cadastrados</title>
-    <script src="js/verificarcadastro.js" defer></script>
-  </head>
 
-  <body>
-    <script>
-      const cadastroString = localStorage.getItem("cadastro");
-      const cadastro = JSON.parse(cadastroString);
+<head>
+  <title>Dados Cadastrados</title>
+  <script src="js/verificarcadastro.js" defer></script>
+</head>
 
-      document.write(`
+<body>
+  <script>
+    const cadastroString = localStorage.getItem("cadastro");
+    const cadastro = JSON.parse(cadastroString);
+
+    document.write(`
             <p>Nome: ${cadastro.nome}</p>
             <p>Telefone: ${cadastro.telefone}</p>
             <p>Email: ${cadastro.email}</p>
         `);
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
