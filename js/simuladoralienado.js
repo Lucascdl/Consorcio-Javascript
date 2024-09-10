@@ -1,5 +1,4 @@
 function calcularSimulacao() {
-
     const [valorBem, lanceInicial, numeroParcelas] = [
         parseFloat(document.getElementById("valorBem").value),
         parseFloat(document.getElementById("lanceInicial").value),
@@ -10,17 +9,23 @@ function calcularSimulacao() {
     if (lanceInicial < 0 || isNaN(lanceInicial)) return alert("Por favor, insira um valor válido para o lance inicial.");
     if (numeroParcelas <= 0 || isNaN(numeroParcelas)) return alert("Por favor, insira um número válido de parcelas.");
 
+    const LTV = 80;
+    const valorAlienado = (valorBem * LTV) / 100;
 
     const taxaAdministrativa = 25;
-    const valorTaxa = (valorBem * taxaAdministrativa) / 100;
+    const valorTaxa = (valorAlienado * taxaAdministrativa) / 100;
 
-    const valorTotal = valorBem + valorTaxa - (lanceInicial > valorBem + valorTaxa ? 0 : lanceInicial);
+    const valorTotal = valorAlienado + valorTaxa - (lanceInicial > valorAlienado + valorTaxa ? 0 : lanceInicial);
+
+    if (lanceInicial >= valorTotal) {
+        alert("Error")}
 
     const valorParcela = valorTotal / numeroParcelas;
 
     const resultadoDiv = document.getElementById("resultado");
     const resultados = {
-        "Valor do Crédito": `R$ ${valorBem.toFixed(2)}`,
+        "Valor do Bem (colateral)": `R$ ${valorBem.toFixed(2)}`,
+        "Valor do Crédito (80% do valor do bem)": `R$ ${valorAlienado.toFixed(2)}`,
         "Lance Inicial": `R$ ${lanceInicial.toFixed(2)}`,
         "Taxa Administrativa (25%)": `R$ ${valorTaxa.toFixed(2)}`,
         "Valor Total a Pagar": `R$ ${valorTotal.toFixed(2)}`,
