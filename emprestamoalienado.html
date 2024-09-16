@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/simuladoremprestimo.css">
+    <link rel="stylesheet" href="css/emprestamoalienado.css">
     <title>Simulador de Empréstimo Alienado</title>
 </head>
 
@@ -12,27 +12,32 @@
     <div class="container">
         <h2>Simulador de Empréstimo Alienado</h2>
 
-        <label for="lanceInicial">Lance Inicial (R$):</label>
-        <input type="number" id="lanceInicial" min="0" step="0.01" placeholder="Ex: 10000">
+        <label for="valorBem">Valor do empréstimo (R$):</label>
+        <input type="number" id="valorBem" min="0" step="0.01" placeholder="Ex: 50000">
 
+       
         <label for="tipoBem">Tipo de bem a ser alienado:</label>
         <select id="tipoBem">
-          <option value="veiculo">Veiculo</option>
-          <option value="casa">Casa</option>
-          <option value="terreno">Terreno</option>
-          <option value="empresa">Empresa</option>
+            <option value="veiculo">Veículo</option>
+            <option value="casa">Casa</option>
+            <option value="terreno">Terreno</option>
+            <option value="empresa">Empresa</option>
         </select>
-
-
         <label for="numeroParcelas">Número de Parcelas:</label>
         <input type="number" id="numeroParcelas" min="1" placeholder="Ex: 60">
 
-        <button onclick="calcularSimulacao()">Calcular</button>
+        <button onclick="CalcularSimulacao()">Calcular</button>
 
-        
         <div class="result" id="resultado"></div>
+    </div>
+    <div class="cadastre-se"></div>
+
+        <H4>Se ficou interessado, clique no botão abaixo e cadastre-se!</H4>
+        <a href="cadastro.html"><button> Cadastro</button></a>
+
     </div>
 
     <script src="js/simuladoralienado.js"></script>
 </body>
+
 </html>
