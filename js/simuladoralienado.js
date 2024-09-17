@@ -1,33 +1,60 @@
 
-function CalcularSimulacao() {
-  // Pegando os valores dos inputs
+function validarEntradas(valorBem, numeroParcelas) {
+  if (isNaN(valorBem) || valorBem <= 0) {
+    alert("Por favor, insira um valor válido para o empréstimo.");
+    return false;
+  }
+  if (isNaN(numeroParcelas) || numeroParcelas <= 0) {
+    alert("Por favor, insira um número válido de parcelas.");
+    return false;
+  }
+  return true;
+}
+
+
+function calcularValorTotal(valorBem, taxaJuros, numeroParcelas) {
+  return valorBem * Math.pow(1 + taxaJuros, numeroParcelas);
+}
+
+
+function calcularValorParcela(valorFinal, numeroParcelas) {
+  return valorFinal / numeroParcelas;
+}
+
+
+function exibirResultados(valorBem, tipoBem, valorFinal, valorParcela, numeroParcelas) {
+  const resultadoDiv = document.getElementById('resultado');
+  resultadoDiv.innerHTML = `
+      <p>Valor do Empréstimo: R$ ${valorBem.toFixed(2)}</p>
+      <p>Tipo de Bem Alienado: ${tipoBem.charAt(0).toUpperCase() + tipoBem.slice(1)}</p>
+      <p>Taxa de Juros Aplicada: 1.5% ao mês</p>
+      <p>Valor Total a Pagar: R$ ${valorFinal.toFixed(2)}</p>
+      <p>Valor da Parcela: R$ ${valorParcela.toFixed(2)} por ${numeroParcelas} meses</p>
+  `;
+}
+
+
+function calcularSimulacao() {
+
   const valorBem = parseFloat(document.getElementById('valorBem').value);
   const numeroParcelas = parseInt(document.getElementById('numeroParcelas').value);
   const tipoBem = document.getElementById('tipoBem').value;
 
-  // Verificando se os campos estão preenchidos corretamente
-  if (isNaN(valorBem) || isNaN(numeroParcelas) || valorBem <= 0 || numeroParcelas <= 0) {
-      alert("Por favor, insira valores válidos para o empréstimo e número de parcelas.");
-      return;
+
+  if (!validarEntradas(valorBem, numeroParcelas)) {
+    return;
   }
 
-  // Taxa de juros de 1.5% ao mês
+
   const taxaJuros = 0.015;
 
-  // Fórmula de cálculo de financiamento (SAC ou Price, depende da aplicação)
-  // Aqui usaremos a fórmula de juros compostos: Valor Final = Valor Inicial * (1 + taxaJuros * numeroParcelas)
-  const valorFinal = valorBem * Math.pow(1 + taxaJuros, numeroParcelas);
-  
-  // Valor da parcela mensal
-  const valorParcela = valorFinal / numeroParcelas;
 
-  // Exibindo o resultado
-  const resultadoDiv = document.getElementById('resultado');
-  resultadoDiv.innerHTML = `
-      <h3>Resultado da Simulação</h3>
-      <p>Tipo de Bem Alienado: <strong>${tipoBem.charAt(0).toUpperCase() + tipoBem.slice(1)}</strong></p>
-      <p>Taxa de Juros Aplicada: <strong>1.5% ao mês</strong></p>
-      <p>Valor Total a Pagar: <strong>R$ ${valorFinal.toFixed(2)}</strong></p>
-      <p>Valor da Parcela: <strong>R$ ${valorParcela.toFixed(2)}</strong> por ${numeroParcelas} meses</p>
-  `;
+  const valorFinal = calcularValorTotal(valorBem, taxaJuros, numeroParcelas);
+  const valorParcela = calcularValorParcela(valorFinal, numeroParcelas);
+
+
+  exibirResultados(valorBem, tipoBem, valorFinal, valorParcela, numeroParcelas);
 }
+
+
+document.getElementById('calcularBtn').addEventListener('click', calcularSimulacao);

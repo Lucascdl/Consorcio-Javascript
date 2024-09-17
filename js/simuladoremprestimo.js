@@ -8,7 +8,7 @@ function calcularSimulacao() {
     if (valorEmprestimo <= 0 || isNaN(valorEmprestimo)) return alert("Por favor, insira um valor válido para o empréstimo.");
     if (numeroParcelas <= 0 || isNaN(numeroParcelas)) return alert("Por favor, insira um número válido de parcelas.");
 
-    // Taxa de juros de 3% ao mês
+
     const taxaJuros = 3 / 100;
     const valorTotal = valorEmprestimo * Math.pow(1 + taxaJuros, numeroParcelas);
     const valorParcela = valorTotal / numeroParcelas;
