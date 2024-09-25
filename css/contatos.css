@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../img/notasDinheiroopacuo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.titulo_contato {
+
+    color: #2193b0;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    margin: 80px;
+    margin-top: 2px;
+}
+
+
+
+
+
+.perfil1 {
+    display: inline-block;
+    align-items: top;
+    align-items: center;
+    font-family: "Inter";
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 2px;
+  
+}
+
+.perfil2 {
+    display: inline-block;
+    align-items: top;
+    align-items: center;
+    font-family: "Inter";
+    padding-right: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.perfil3 {
+    display: inline-block;
+    align-items: top;
+    align-items: center;
+    font-family: "Inter";
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.perfil4 {
+    display: inline-block;
+    align-items: top;
+    align-items: center;
+    font-family: "Inter";
+    padding-right: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 2px;
+   
+    
+}
+
+.nome {
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 18px;
+}
+
+
