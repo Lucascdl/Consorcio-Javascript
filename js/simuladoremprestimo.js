@@ -26,3 +26,9 @@ function calcularSimulacao() {
         .map(([key, value]) => `<p>${key}: ${value}</p>`)
         .join("");
 }
+
+function limparCampos() {
+    document.getElementById("valorBem").value = "";
+    document.getElementById("numeroParcelas").value = "";
+    document.getElementById("resultado").innerHTML = "";  
+}

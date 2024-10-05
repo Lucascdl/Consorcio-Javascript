@@ -55,6 +55,7 @@ p {
 .btn-container {
     display: flex;
     justify-content: center;
+
 }
 
 .btn {
@@ -71,6 +72,21 @@ p {
 
 .btn:hover {
     background-color: #6dd5ed;
+}
+
+.btn-contatos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
+    margin-top: 60px;
+
+
+}
+
+.btn-contatos .btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
 }
 
 @media (max-width: 768px) {

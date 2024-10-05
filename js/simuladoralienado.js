@@ -56,5 +56,12 @@ function calcularSimulacao() {
   exibirResultados(valorBem, tipoBem, valorFinal, valorParcela, numeroParcelas);
 }
 
+function limparCampos() {
+  document.getElementById("valorBem").value = "";
+  document.getElementById("tipoBem").value = "";
+  document.getElementById("numeroParcelas").value = "";
+  document.getElementById("resultado").innerHTML = "";  
+}
+
 
 document.getElementById('calcularBtn').addEventListener('click', calcularSimulacao);
