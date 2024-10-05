@@ -28,7 +28,7 @@ function calcularSimulacao() {
         "Valor de Cada Parcela": `R$ ${valorParcela.toFixed(2)}`
     };
 
-    
+
 
     resultadoDiv.innerHTML = Object.entries(resultados)
         .map(([key, value]) => `<p>${key}: ${value}</p>`)
@@ -39,5 +39,5 @@ function limparCampos() {
     document.getElementById("valorBem").value = "";
     document.getElementById("lanceInicial").value = "";
     document.getElementById("numeroParcelas").value = "";
-    document.getElementById("resultado").innerHTML = "";  // Limpar o resultado também, se desejar
+    document.getElementById("resultado").innerHTML = "";
 }
